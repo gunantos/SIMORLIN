@@ -27,29 +27,4 @@ public/*.sw?
 #-------------------------
 api/vendor/
 
-# Netbeans
-api/nbproject/
-api/build/
-api/nbbuild/
-api/dist/
-api/nbdist/
-api/nbactions.xml
-api/nb-configuration.xml
-api/.nb-gradle/
-
-# Sublime Text
-*.tmlanguage.cache
-*.tmPreferences.cache
-*.stTheme.cache
-*.sublime-workspace
-*.sublime-project
-.phpintel
-/api/
-
-# Visual Studio Code
-.vscode/
-
-api/results/
-api/phpunit*.xml
-api/.phpunit.*.cache
 
