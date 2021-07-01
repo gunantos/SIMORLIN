@@ -23,97 +23,9 @@ public/*.sln
 public/*.sw?
 
 #-------------------------
-# Operating Specific Junk Files
-#-------------------------
-api/.env
-
-# OS X
-api/.DS_Store
-api/.AppleDouble
-api/.LSOverride
-
-# OS X Thumbnails
-._*
-
-# Windows image file caches
-api/Thumbs.db
-api/ehthumbs.db
-api/Desktop.ini
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
-
-# Windows shortcuts
-*.lnk
-
-#-------------------------
-# Environment Files
-#-------------------------
-# These should never be under version control,
-# as it poses a security risk.
-.env
-.vagrant
-Vagrantfile
-
-#-------------------------
-# Temporary Files
-#-------------------------
-api/writable/cache/*
-!api/writable/cache/index.html
-
-writable/logs/*
-!writable/logs/index.html
-
-api/writable/session/*
-!api/writable/session/index.html
-
-writable/uploads/*
-!writable/uploads/index.html
-
-api/writable/debugbar/*
-
-api/php_errors.log
-
-#-------------------------
-# User Guide Temp Files
-#-------------------------
-api/user_guide_src/build/*
-api/user_guide_src/cilexer/build/*
-api/user_guide_src/cilexer/dist/*
-api/user_guide_src/cilexer/pycilexer.egg-info/*
-
-#-------------------------
-# Test Files
-#-------------------------
-api/tests/coverage*
-
-# Don't save phpunit under version control.
-phpunit
-
-#-------------------------
 # Composer
 #-------------------------
 api/vendor/
-
-#-------------------------
-# IDE / Development Files
-#-------------------------
-
-# Modules Testing
-api/_modules/*
-
-# phpenv local config
-.php-version
-
-# Jetbrains editors (PHPStorm, etc)
-api/.idea/
-*.iml
 
 # Netbeans
 api/nbproject/
