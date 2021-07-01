@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "appkita/phpauth",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gunantos/PHP_AUTHENTICATION.git",
-                "reference": "7589f8c3607a845400c7adadd8d6499715061a60"
+                "reference": "67d77cbfe73baebae9602dfd100acbcd4d47334f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gunantos/PHP_AUTHENTICATION/zipball/7589f8c3607a845400c7adadd8d6499715061a60",
-                "reference": "7589f8c3607a845400c7adadd8d6499715061a60",
+                "url": "https://api.github.com/repos/gunantos/PHP_AUTHENTICATION/zipball/67d77cbfe73baebae9602dfd100acbcd4d47334f",
+                "reference": "67d77cbfe73baebae9602dfd100acbcd4d47334f",
                 "shasum": ""
             },
             "require": {
@@ -56,7 +56,7 @@
             ],
             "support": {
                 "issues": "https://github.com/gunantos/PHP_AUTHENTICATION/issues",
-                "source": "https://github.com/gunantos/PHP_AUTHENTICATION/tree/1.2.1"
+                "source": "https://github.com/gunantos/PHP_AUTHENTICATION/tree/1.2.2"
             },
             "funding": [
                 {
@@ -64,7 +64,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2021-06-29T14:28:26+00:00"
+            "time": "2021-06-29T15:15:15+00:00"
         },
         {
             "name": "codeigniter4/framework",
