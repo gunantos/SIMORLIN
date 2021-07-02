@@ -2,6 +2,7 @@ import Vue from 'vue'
 import { ls_auth, ls_admin } from '@/constants.js'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Login from '@/views/Login.vue'
 
 Vue.use(VueRouter)
 
@@ -11,7 +12,7 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      quest: true
+     requireAuth: true,
     }
   },
   {
@@ -19,7 +20,7 @@ const routes = [
     name: 'Tersedia',
     component: Home,
     meta: {
-      quest: true
+      requireAuth: true,
     }
   },
   {
@@ -27,13 +28,13 @@ const routes = [
     name: 'Kebutuhan',
     component: Home,
     meta: {
-      quest: true
+      requireAuth: true,
     }
   },
   {
     path: '/login',
     name: 'Login',
-    component: Home,
+    component: Login,
     meta: {
       quest: true
     }

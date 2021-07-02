@@ -1,7 +1,7 @@
 <template>
   <div>
-    <app-admin v-if="isLogin"></app-admin>
-    <app-quest v-else></app-quest>
+    <app-admin v-if="isLogin" :islogin="isLogin"></app-admin>
+    <app-quest :islogin="isLogin" v-else></app-quest>
   </div>
 </template>
 <script>

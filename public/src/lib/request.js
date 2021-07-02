@@ -1,6 +1,7 @@
 import axios from 'axios'
 import * as configs from '@/constants.js'
 import store from '@/store'
+import { AUTH_LOGOUT } from '@/constants.js'
 
 const token = localStorage.getItem(configs.ls_auth)
 
@@ -30,7 +31,7 @@ request.interceptors.response.use((response) => {
     if (error.response) {
         if (error.response.status) {
             if (error.response.status == 401) {
-                store.dispatch('auth/logout').then(() => {
+                store.dispatch('auth/'+ AUTH_LOGOUT).then(() => {
                     location.reload()
                     return;
                 })
