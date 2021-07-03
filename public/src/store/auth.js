@@ -28,9 +28,10 @@ const auth = {
     },
     actions: {
         [AUTH_REQUEST]: ({ commit }, user) => {
+            console.log(user)
             return new Promise((reslove, reject) => {
                 commit(AUTH_REQUEST)
-                request({ url: 'auth', data: user, method: 'POST' }).then(resp => {
+                request({ url: 'auth', method: 'POST', auth: { username: user.username, password: user.password },  crossDomain: true }).then(resp => {
                     const data = resp.data
                     if (data.status) {
                         localStorage.setItem(ls_auth, data.token)

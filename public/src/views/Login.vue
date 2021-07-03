@@ -91,10 +91,14 @@ export default {
       const valid = await this.$refs.observer.validate()
       if (valid) {
         this.loading = true
-        this.$store.dispatch('auth/'+ AUTH_REQUEST).then(resp => {
+        this.$store.dispatch('auth/'+ AUTH_REQUEST, {username: this.email, password: this.password }).then(resp => {
             console.log(resp)
             this.loading = false
             let icnt = 3;
+            var url = '/user/'
+            if (resp.isadmin) {
+              url = '/admin/'
+            }
             window.setTimeout(function() {
                 icnt--
                 this.message = 'Login success, wait '+ icnt + ' to redirect'
