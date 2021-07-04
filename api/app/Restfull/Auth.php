@@ -8,7 +8,7 @@ Class Auth {
     private static $db = false;
     private static $config = '';
     
-    public static function init($config) {
+    public static function init($config) { 
         Auth::$config = $config->user_config;
         Auth::$base_config = $config;
         if ($config->cekfrom == 'database') {

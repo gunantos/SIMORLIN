@@ -21,6 +21,6 @@ class Auth extends RestfullApi
 	public function create() {
 		$PHPAUTH = new Authentication($this->config);
         $token = $PHPAUTH->token()->encode($this->user_api);
-        return $this->respond(['status'=>true, 'token'=>$token]);
+        return $this->respond(['status'=>true, 'token'=>$token, 'isadmin'=>true]);
 	}
 }

@@ -92,20 +92,20 @@ export default {
       if (valid) {
         this.loading = true
         this.$store.dispatch('auth/'+ AUTH_REQUEST, {username: this.email, password: this.password }).then(resp => {
-            console.log(resp)
             this.loading = false
             let icnt = 3;
-            var url = '/user/'
+            var url = '/'
             if (resp.isadmin) {
               url = '/admin/'
             }
-            window.setTimeout(function() {
-                icnt--
+            setInterval(() => {
+               icnt--
                 this.message = 'Login success, wait '+ icnt + ' to redirect'
+                console.log(this.message)
                 if (icnt === 0) {
                     window.location.href = url
                 }
-            }, 1000)
+            }, 1000);
         }).catch(err => {
             this.message = err
             this.loading = false

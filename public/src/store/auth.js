@@ -63,8 +63,20 @@ const auth = {
     },
     getters: {
         isAuthenticated: state => !!state.token,
+        token: state => state.token,
         authStatus: state => state.status,
-        isAdmin: state => (state.isAdmin !== undefined && state.isAdmin !== null && state.isAdmin !== '' && state.isAdmin !== '' && state.isAdmin !== '0' && state.isAdmin !== 0) ? true : false,
+        isAdmin(state) {
+            const adm = state.isAdmin
+            if (adm) {
+                return true
+            } else {
+                if (adm !== undefined && adm !== null && adm !== '' && adm !== 0) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        }
     }
 }
 

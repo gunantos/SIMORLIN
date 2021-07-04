@@ -1,8 +1,8 @@
 import Vue from 'vue'
-import { ls_auth, ls_admin } from '@/constants.js'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '@/views/Login.vue'
+import store from '@/store/index.js'
 
 Vue.use(VueRouter)
 
@@ -12,7 +12,8 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-     requireAuth: true,
+      requireAuth: true,
+      is_user: true
     }
   },
   {
@@ -21,6 +22,7 @@ const routes = [
     component: Home,
     meta: {
       requireAuth: true,
+      is_user: true
     }
   },
   {
@@ -29,6 +31,7 @@ const routes = [
     component: Home,
     meta: {
       requireAuth: true,
+      is_user: true
     }
   },
   {
@@ -74,30 +77,52 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
-const token = localStorage.getItem(ls_auth)
-const isAdmin = localStorage.getItem(ls_admin)
+const isAuthenticated = store.getters['auth/isAuthenticated']
+const isAdmin = store.getters['auth/isAdmin']
 
 router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requireAuth)) {
-    if (token == null || token == '') {
-      next({
-        path: '/login',
-        params: { nextUrl: to.fullPath }
-      })
+    console.log(isAdmin)
+  if (to.name == 'Login' || to.name == 'login') {
+    if (isAdmin == 1 || isAdmin) {
+      next({ name: 'Dashboard' })
     } else {
-      if (to.matched.some(record => record.meta.is_admin)) {
-        if (isAdmin == 1) {
-           next()
-        } else {
-          next({ name: 'Home' })
-         }
-      } else {
-        next()
-      }
+      next({ name: 'Home' })
     }
   } else {
-    next()
+    if (to.matched.some(record => record.meta.requireAuth)) {
+      if (isAuthenticated) {
+        if (to.matched.some(record => record.meta.is_admin)) {
+          if (to.name == 'Login' || to.name == 'login') {
+            if (isAdmin == 1 || isAdmin) {
+              next({ name: 'Dashboard' })
+            } else {
+              next({ name: 'Home' })
+            }
+          } else {
+            if (isAdmin == 1 || isAdmin) {
+              next()
+            } else {
+              next({ name: 'Home' })
+            }
+          }
+        } else if (to.matched.some(record => record.meta.is_user)) {
+          if (isAdmin) {
+            next({ name: 'Dashboard'})
+          } else {
+            next()
+          }
+        } else {
+          next()
+        }
+      } else {
+        next({
+          path: '/login',
+          params: { nextUrl: to.fullPath }
+        })
+      }
+    } else {
+      next()
+    }
   }
 })
 export default router

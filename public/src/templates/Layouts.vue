@@ -14,7 +14,7 @@ export default {
   },
   computed: {
     isLogin() {
-      return false;
+      return this.$store.getters['auth/isAuthenticated']
     },
   },
   data() {

@@ -8,7 +8,7 @@ const token = localStorage.getItem(configs.ls_auth)
 const request = axios.create({
     baseURL: configs.API_URL
 })
-//request.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
+request.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
 
 request.interceptors.request.use(
   config => {
