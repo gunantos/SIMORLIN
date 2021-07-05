@@ -163,7 +163,8 @@ abstract class BaseController extends Controller
                 });
             break;
             case 'digest':
-                $user = $PHPAUTH->auth(METHOD::DIGEST, function($username, $password) {
+                $user = $PHPAUTH->auth(METHOD::DIGEST, function($username, $password, $config) {
+                    $user_config = $config[0];
                     $_user = Auth::digest($username, $password);
                     if ($_user != false) {
                           
@@ -174,11 +175,15 @@ abstract class BaseController extends Controller
                     } else {
                         return false;
                     }
-                });
+                }, $user_config);
             break;
+            case 'token':
             case 'jwt':
-                $user = $PHPAUTH->auth(METHOD::TOKEN, function($key) {
-                    $_user = Auth::token($key);
+                $user = $PHPAUTH->auth(METHOD::TOKEN, function($key, $config) {
+                    $user_config = $config[0];
+                    $dataUser = (array) $key;
+                    $username = $dataUser[$user_config['username_coloumn']];
+                    $_user = Auth::token($username);
                     if ($_user) {
                        
                         $this->_cache_user->auth = 'jwt';
@@ -188,7 +193,7 @@ abstract class BaseController extends Controller
                     } else {
                         return false;
                     }
-                });
+                }, $user_config);
             break;
             default:
              $user=  $PHPAUTH->auth(METHOD::KEY, function($key) {

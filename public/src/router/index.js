@@ -81,12 +81,15 @@ const isAuthenticated = store.getters['auth/isAuthenticated']
 const isAdmin = store.getters['auth/isAdmin']
 
 router.beforeEach((to, from, next) => {
-    console.log(isAdmin)
   if (to.name == 'Login' || to.name == 'login') {
-    if (isAdmin == 1 || isAdmin) {
-      next({ name: 'Dashboard' })
+    if (isAuthenticated) {
+      if (isAdmin == 1 || isAdmin) {
+        next({ name: 'Dashboard' })
+      } else {
+        next({ name: 'Home' })
+      }
     } else {
-      next({ name: 'Home' })
+      next()
     }
   } else {
     if (to.matched.some(record => record.meta.requireAuth)) {

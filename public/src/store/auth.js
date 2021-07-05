@@ -21,6 +21,8 @@ const auth = {
             state.status = 'error'
         },
         [AUTH_LOGOUT]: (state) => {
+            localStorage.removeItem(ls_admin)
+            localStorage.removeItem(ls_auth)
             state.status = ''
             state.token = ''
             state.isAdmin = ''
