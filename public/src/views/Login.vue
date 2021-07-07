@@ -52,7 +52,7 @@
 <script>
 import { required, email } from 'vee-validate/dist/rules'
 import { extend, ValidationProvider, setInteractionMode, ValidationObserver } from 'vee-validate'
-import { AUTH_REQUEST } from '@/constants.js'
+import { AUTH_REQUEST, SET_TOKEN } from '@/constants.js'
 
 setInteractionMode('eager')
 
@@ -92,18 +92,24 @@ export default {
       if (valid) {
         this.loading = true
         this.$store.dispatch('auth/'+ AUTH_REQUEST, {username: this.email, password: this.password }).then(resp => {
+          console.log(resp)
+            const token = resp.token
+            const admin = resp.isadmin
             this.loading = false
             let icnt = 3;
             var url = '/'
-            if (resp.isadmin) {
-              url = '/admin/'
+            if (admin) {
+              url = '/admin/dashboard'
             }
             setInterval(() => {
                icnt--
                 this.message = 'Login success, wait '+ icnt + ' to redirect'
                 console.log(this.message)
                 if (icnt === 0) {
+                  this.$store.dispatch('auth/'+ SET_TOKEN, { token: token, admin: admin }).then(res => {
+                    console.log(res)
                     window.location.href = url
+                  })
                 }
             }, 1000);
         }).catch(err => {

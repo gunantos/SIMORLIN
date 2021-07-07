@@ -44,8 +44,26 @@ const routes = [
   },
   {
     path: '/admin/',
-    alias: '/admin',
+    alias: '/admin/dashboard',
     name: 'Dashboard',
+    component: Home,
+    meta: {
+      requireAuth: true,
+      is_admin: true
+    }
+  },
+  {
+    path: '/admin/kebutuhan',
+    name: 'Kebutuhan',
+    component: Home,
+    meta: {
+      requireAuth: true,
+      is_admin: true
+    }
+  },
+  {
+    path: '/admin/tersedia',
+    name: 'Tersedia',
     component: Home,
     meta: {
       requireAuth: true,

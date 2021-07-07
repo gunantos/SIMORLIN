@@ -1,34 +1,58 @@
 <template>
   <v-app-bar app color="primary" dark>
-    <div class="d-flex align-center">
-      <v-img
-        alt="Vuetify Logo"
-        class="shrink mr-2"
-        contain
-        src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-        transition="scale-transition"
-        width="40"
-      />
-
-      <v-img
-        alt="Vuetify Name"
-        class="shrink mt-1 hidden-sm-and-down"
-        contain
-        min-width="100"
-        src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-        width="100"
-      />
-    </div>
-
+    <v-app-bar-nav-icon @click="setSidebar()"></v-app-bar-nav-icon>
     <v-spacer></v-spacer>
-
-    <v-btn
-      href="https://github.com/vuetifyjs/vuetify/releases/latest"
-      target="_blank"
-      text
+    <v-menu
+      open-on-hover
+      offset-y
     >
-      <span class="mr-2">Latest Release</span>
-      <v-icon>mdi-open-in-new</v-icon>
-    </v-btn>
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn
+          icon
+          v-bind="attrs"
+          v-on="on"
+        >
+          <v-icon>mdi-account</v-icon>
+        </v-btn>
+      </template>
+
+      <v-list>
+        <v-list-item link @click="goto('profile')">
+          <v-list-item-icon style="padding-right: 0px; margin-right: 10px"><v-icon>mdi-account</v-icon></v-list-item-icon>
+          <v-list-item-title>Profile</v-list-item-title>
+        </v-list-item>
+        <v-list-item link  @click="goto('logout')">
+          <v-list-item-icon style="padding-right: 0px; margin-right: 10px"><v-icon>mdi-logout</v-icon></v-list-item-icon>
+          <v-list-item-title>Logout</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
   </v-app-bar>
 </template>
+<script>
+import { AUTH_LOGOUT } from '@/constants'
+export default {
+  computed: {},
+  data () {
+    return {
+
+    }
+  },
+  methods: {
+    setSidebar () {
+      var sdbar = this.$store.getters.valSidebar
+      this.$store.dispatch('set_sidebar', !sdbar)
+    },
+    goto(val) {
+      if (val == 'profile') {
+        this.$router.push({ path: '/profile' })
+      } else if (val == 'logout') {
+        this.$store.dispatch('auth/'+ AUTH_LOGOUT).then(() => {
+           this.$router.push({ path: '/login' })
+           return;
+        })
+      }
+    }
+  }
+}
+</script>

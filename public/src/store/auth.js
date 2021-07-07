@@ -1,4 +1,4 @@
-import { ls_admin, ls_auth, AUTH_LOGOUT, AUTH_ERROR, AUTH_REQUEST, AUTH_SUCCESS } from '@/constants.js'
+import { ls_admin, ls_auth, AUTH_LOGOUT, AUTH_ERROR, AUTH_REQUEST, AUTH_SUCCESS, SET_TOKEN } from '@/constants.js'
 import request from '@/lib/request.js'
 
 const auth = {
@@ -33,13 +33,10 @@ const auth = {
             console.log(user)
             return new Promise((reslove, reject) => {
                 commit(AUTH_REQUEST)
-                request({ url: 'auth', method: 'POST', auth: { username: user.username, password: user.password },  crossDomain: true }).then(resp => {
+                request({ url: 'auth', method: 'POST', auth: { username: user.username, password: user.password }, crossDomain: true }).then(resp => {
                     const data = resp.data
                     if (data.status) {
-                        localStorage.setItem(ls_auth, data.token)
-                        localStorage.setItem(ls_admin, data.isadmin)
-                        commit(AUTH_SUCCESS, data.token, data.isAdmin)
-                        reslove(resp)
+                        reslove(data)
                     } else {
                         commit(AUTH_ERROR, data.message)
                         localStorage.removeItem(ls_admin)
@@ -52,6 +49,14 @@ const auth = {
                     localStorage.removeItem(ls_auth)
                     reject(err)
                 })
+            })
+        },
+        [SET_TOKEN]: ({ commit }, data) => {
+            return new Promise((resolve) => {
+                localStorage.setItem(ls_auth, data.token)
+                localStorage.setItem(ls_admin, data.admin)
+                commit(AUTH_SUCCESS, data.token, data.admin)
+                resolve(true)
             })
         },
         [AUTH_LOGOUT]: ({ commit }) => {
