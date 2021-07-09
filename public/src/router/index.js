@@ -19,6 +19,15 @@ const routes = [
       is_user: true
     }
   },
+   {
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: Home,
+    meta: {
+      requireAuth: true,
+      is_user: true
+    }
+  },
   {
     path: '/map',
     name: 'Map',
@@ -30,7 +39,6 @@ const routes = [
   },
   {
     path: '/data/kecamatan',
-    alias: '/admin/data/kecamatan',
     component: Kecamatan,
     meta: {
       requireAuth: true,
@@ -84,11 +92,7 @@ router.beforeEach((to, from, next) => {
             }
           }
         } else if (to.matched.some(record => record.meta.is_user)) {
-          if (isAdmin) {
-            next({ name: 'Dashboard'})
-          } else {
             next()
-          }
         } else {
           next()
         }

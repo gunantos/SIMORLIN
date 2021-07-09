@@ -9,7 +9,7 @@ export default new Vuex.Store({
     sidebar: true,
     listMenu: [
       { title: 'Dashboard', icon: 'mdi-view-dashboard', path: '/dashboard' },
-      { title: 'Map', icon: 'mdi-map-search', path: '/map/' },
+      { title: 'Map', icon: 'mdi-map-search', path: '/map' },
       {
         title: 'Input', icon: 'mdi-table-edit', path: '/input', sub: [
           { title: 'Kebutuhan', icon: 'mdi-map-search', path: '/input/kebutuhan' },
