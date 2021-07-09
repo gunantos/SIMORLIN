@@ -8,13 +8,29 @@ export default new Vuex.Store({
   state: {
     sidebar: true,
     listMenu: [
-      { title: 'Dashboard', icon: 'mdi-view-dashboard', path: '/admin/dashboard' },
-      { title: 'Kebutuhan', icon: 'mdi-map-search', path: '/admin/kebutuhan' },
-      { title: 'Tersedia', icon: 'mdi-map-marker-circle', path: '/admin/tersedia' },
+      { title: 'Dashboard', icon: 'mdi-view-dashboard', path: '/dashboard' },
+      { title: 'Map', icon: 'mdi-map-search', path: '/map/' },
       {
-        title: 'Input', icon: 'mdi-table-edit', path: '/admin/input', sub: [
-          { title: 'Kebutuhan', icon: 'mdi-map-search', path: '/admin/input/kebutuhan' },
-        { title: 'Tersedia', icon: 'mdi-map-marker-circle', path: '/admin/input/tersedia' }
+        title: 'Input', icon: 'mdi-table-edit', path: '/input', sub: [
+          { title: 'Kebutuhan', icon: 'mdi-map-search', path: '/input/kebutuhan' },
+        { title: 'Tersedia', icon: 'mdi-map-marker-circle', path: '/input/tersedia' }
+        ]
+      },
+      {
+        title: 'Data', icon: 'mdi-ballot', path: '/data', sub: [
+          { title: 'Kecamatan', icon: '', path: '/data/kecamatan' },
+          { title: 'Desa/Kelurahan', icon: '', path: '/data/desa' },
+          { title: 'Jalan', icon: '', path: '/data/jalan' },
+          { title: 'Ruas Jalan', icon: '', path: '/data/ruas' },
+          { title: 'Arah Jalan', icon: '', path: '/data/arah' },
+          { title: 'Perlengkapan', icon: '', path: '/data/perlengkapan' }
+        ]
+      },
+      {
+        title: 'Pengaturan', icon: 'mdi-cog', path: '/setting', sub: [
+          { title: 'Gambar Login', icon: 'mdi-cookie', path: '/setting/login-gambar' },
+          { title: 'Users', icon: 'mdi-account', path: '/setting/user' },
+          { title: 'Jenis User', icon: 'mdi-account-circle', path: '/setting/user-access' }
       ]}
     ]
   },

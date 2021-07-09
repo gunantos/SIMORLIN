@@ -3,12 +3,15 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '@/views/Login.vue'
 import store from '@/store/index.js'
+import Map from '@/views/Map.vue'
+import Kecamatan from '@/views/data/Kecamatan.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
+    alias: '/dashboard',
     name: 'Home',
     component: Home,
     meta: {
@@ -17,18 +20,18 @@ const routes = [
     }
   },
   {
-    path: '/tersedia',
-    name: 'Tersedia',
-    component: Home,
+    path: '/map',
+    name: 'Map',
+    component: Map,
     meta: {
       requireAuth: true,
       is_user: true
     }
   },
   {
-    path: '/kebutuhan',
-    name: 'Kebutuhan',
-    component: Home,
+    path: '/data/kecamatan',
+    alias: '/admin/data/kecamatan',
+    component: Kecamatan,
     meta: {
       requireAuth: true,
       is_user: true
@@ -42,52 +45,6 @@ const routes = [
       quest: true
     }
   },
-  {
-    path: '/admin/',
-    alias: '/admin/dashboard',
-    name: 'Dashboard',
-    component: Home,
-    meta: {
-      requireAuth: true,
-      is_admin: true
-    }
-  },
-  {
-    path: '/admin/kebutuhan',
-    name: 'Kebutuhan',
-    component: Home,
-    meta: {
-      requireAuth: true,
-      is_admin: true
-    }
-  },
-  {
-    path: '/admin/tersedia',
-    name: 'Tersedia',
-    component: Home,
-    meta: {
-      requireAuth: true,
-      is_admin: true
-    }
-  },
-  {
-    path: '/admin/input',
-    name: 'Input',
-    component: Home,
-    meta: {
-      requireAuth: true,
-      is_admin: true
-    }
-  },
-  {
-    path: '/admin/report',
-    name: 'Report',
-    component: Home,
-    meta: {
-      requireAuth: true,
-      is_admin: true
-    }
-  }
 ]
 
 const router = new VueRouter({

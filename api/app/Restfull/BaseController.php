@@ -164,14 +164,13 @@ abstract class BaseController extends Controller
             break;
             case 'digest':
                 $user = $PHPAUTH->auth(METHOD::DIGEST, function($username, $password, $config) {
-                    $user_config = $config[0];
                     $_user = Auth::digest($username, $password);
                     if ($_user != false) {
                           
                         $this->_cache_user->auth = 'digest';
                         $this->_cache_api->auth = 'digest';
                           $this->createCacheUser($_user);
-                          return ['username'=>$_user[$user_config['username_coloumn']], 'password'=>$_user[$user_config['password_coloumn']]];
+                          return ['username'=>$_user[$config['username_coloumn']], 'password'=>$_user[$config['password_coloumn']]];
                     } else {
                         return false;
                     }
@@ -180,9 +179,8 @@ abstract class BaseController extends Controller
             case 'token':
             case 'jwt':
                 $user = $PHPAUTH->auth(METHOD::TOKEN, function($key, $config) {
-                    $user_config = $config[0];
                     $dataUser = (array) $key;
-                    $username = $dataUser[$user_config['username_coloumn']];
+                    $username = $dataUser[$config['username_coloumn']];
                     $_user = Auth::token($username);
                     if ($_user) {
                        

@@ -23,6 +23,7 @@ $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(true);
 $routes->set404Override();
 $routes->setAutoRoute(false);
+$routes->get('noauth/corousel', 'Noauth::Corousel');
 
 /*
  * --------------------------------------------------------------------
