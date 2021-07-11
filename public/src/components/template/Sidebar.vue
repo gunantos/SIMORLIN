@@ -1,5 +1,14 @@
 <template>
-  <v-navigation-drawer app floating v-model="sidebar">
+  <v-navigation-drawer app floating v-model="sidebar" dark :src="gambar">
+     <template v-slot:img="{ props }">
+        <v-img
+          :src="gambar"
+          height="100%"
+          width="100%"
+          v-bind="props"
+          gradient="to top right, rgba(43,168,224.8), rgba(75,129,195,.7)"
+        ></v-img>
+      </template>
     <v-list-item>
       <v-list-item-content>
         <v-list-item-title
@@ -14,9 +23,9 @@
 
     <v-divider></v-divider>
 
-    <v-list dense nav>
+    <v-list dense nav dark>
       <div v-for="(item, inde) in items" :key="inde">
-        <v-list-group v-if="issub(item)" no-action :prepend-icon="item.icon">
+        <v-list-group v-if="issub(item)" no-action :prepend-icon="item.icon" color="white">
           <template v-slot:activator>
             <v-list-item-content>
               <v-list-item-title>{{ item.title }}</v-list-item-title>
@@ -26,6 +35,8 @@
             v-for="(itm, ind) in item.sub"
             :key="ind"
             link
+            dark
+            color="white"
             :to="itm.path"
           >
             <v-list-item-title>{{ itm.title }}</v-list-item-title>
@@ -49,6 +60,7 @@
 </template>
 <script>
 import { APP_NAME } from "@/constants.js";
+import gambar from '@/assets/dishubbandung.jpg'
 export default {
   props: {},
   computed: {
@@ -70,6 +82,7 @@ export default {
   data() {
     return {
       menu: null,
+      gambar: gambar
     };
   },
   methods: {
@@ -86,3 +99,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.active {
+  background-color: aliceblue;
+}
+</style>

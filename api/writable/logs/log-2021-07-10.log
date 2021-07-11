@@ -1,0 +1,120 @@
+CRITICAL - 2021-07-10 11:41:39 --> Call to undefined function App\Controllers\emtpy()
+#0 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Kecamatan->create()
+#1 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kecamatan))
+#2 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 G:\Project\website\SIMORLIN\api\public\index.php(46): CodeIgniter\CodeIgniter->run()
+#4 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\Project\\webs...')
+#5 {main}
+CRITICAL - 2021-07-10 22:17:26 --> Allowed fields must be specified for model: App\Models\KecamatanModal
+#0 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\BaseModel.php(1205): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\Keca...')
+#1 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\BaseModel.php(745): CodeIgniter\BaseModel->doProtectFields(Array)
+#2 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Model.php(686): CodeIgniter\BaseModel->insert(Array, true)
+#3 G:\Project\website\SIMORLIN\api\app\Controllers\Kecamatan.php(46): CodeIgniter\Model->insert(Array)
+#4 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Kecamatan->create()
+#5 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kecamatan))
+#6 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 G:\Project\website\SIMORLIN\api\public\index.php(46): CodeIgniter\CodeIgniter->run()
+#8 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\Project\\webs...')
+#9 {main}
+CRITICAL - 2021-07-10 22:28:16 --> Class not found or Undefined property: CodeIgniter\HTTP\IncomingRequest::$getVar
+#0 G:\Project\website\SIMORLIN\api\app\Controllers\Kecamatan.php(55): Appkita\PHPAuth\Authentication->Appkita\PHPAuth\{closure}(8, 'Undefined prope...', 'G:\\Project\\webs...', 55, Array)
+#1 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Kecamatan->update('6')
+#2 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kecamatan))
+#3 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\Project\website\SIMORLIN\api\public\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\Project\\webs...')
+#6 {main}
+CRITICAL - 2021-07-10 22:29:07 --> Class not found or Undefined property: CodeIgniter\HTTP\IncomingRequest::$getVar
+#0 G:\Project\website\SIMORLIN\api\app\Controllers\Kecamatan.php(55): Appkita\PHPAuth\Authentication->Appkita\PHPAuth\{closure}(8, 'Undefined prope...', 'G:\\Project\\webs...', 55, Array)
+#1 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Kecamatan->update('6')
+#2 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kecamatan))
+#3 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\Project\website\SIMORLIN\api\public\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\Project\\webs...')
+#6 {main}
+CRITICAL - 2021-07-10 22:29:54 --> Class not found or Trying to get property 'kode_kecamatan' of non-object
+#0 G:\Project\website\SIMORLIN\api\app\Controllers\Kecamatan.php(55): Appkita\PHPAuth\Authentication->Appkita\PHPAuth\{closure}(8, 'Trying to get p...', 'G:\\Project\\webs...', 55, Array)
+#1 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Kecamatan->update('6')
+#2 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kecamatan))
+#3 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\Project\website\SIMORLIN\api\public\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\Project\\webs...')
+#6 {main}
+CRITICAL - 2021-07-10 22:30:06 --> Class not found or Undefined index: kode_kecamatan
+#0 G:\Project\website\SIMORLIN\api\app\Controllers\Kecamatan.php(55): Appkita\PHPAuth\Authentication->Appkita\PHPAuth\{closure}(8, 'Undefined index...', 'G:\\Project\\webs...', 55, Array)
+#1 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Kecamatan->update('6')
+#2 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kecamatan))
+#3 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\Project\website\SIMORLIN\api\public\index.php(46): CodeIgniter\CodeIgniter->run()
+#5 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\Project\\webs...')
+#6 {main}
+CRITICAL - 2021-07-10 22:38:58 --> Cannot declare class App\Controllers\Kecamatan, because the name is already in use
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-07-10 22:39:07 --> Cannot declare class App\Controllers\Kecamatan, because the name is already in use
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-07-10 22:39:46 --> Cannot declare class App\Models\KecamatanModal, because the name is already in use
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-07-10 23:43:47 --> Cannot declare class App\Controllers\Jalan, because the name is already in use
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2021-07-10 23:55:34 --> Column 'id_desa' in where clause is ambiguous
+CRITICAL - 2021-07-10 23:55:34 --> Column 'id_desa' in where clause is ambiguous
+#0 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 G:\Project\website\SIMORLIN\api\app\Models\JalanModel.php(27): CodeIgniter\Database\BaseBuilder->get()
+#5 G:\Project\website\SIMORLIN\api\app\Controllers\Jalan.php(42): App\Models\JalanModel->getListJalan(0, 1, Array)
+#6 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Jalan->index()
+#7 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Jalan))
+#8 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 G:\Project\website\SIMORLIN\api\public\index.php(46): CodeIgniter\CodeIgniter->run()
+#10 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\Project\\webs...')
+#11 {main}
+ERROR - 2021-07-10 23:55:36 --> Column 'id_desa' in where clause is ambiguous
+CRITICAL - 2021-07-10 23:55:36 --> Column 'id_desa' in where clause is ambiguous
+#0 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 G:\Project\website\SIMORLIN\api\app\Models\JalanModel.php(27): CodeIgniter\Database\BaseBuilder->get()
+#5 G:\Project\website\SIMORLIN\api\app\Controllers\Jalan.php(42): App\Models\JalanModel->getListJalan(0, 1, Array)
+#6 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Jalan->index()
+#7 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Jalan))
+#8 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 G:\Project\website\SIMORLIN\api\public\index.php(46): CodeIgniter\CodeIgniter->run()
+#10 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\Project\\webs...')
+#11 {main}
+ERROR - 2021-07-10 23:55:45 --> Column 'kelurahan' cannot be null
+CRITICAL - 2021-07-10 23:55:45 --> Column 'kelurahan' cannot be null
+#0 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('INSERT INTO `de...')
+#1 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `de...')
+#2 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `de...')
+#3 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2277): CodeIgniter\Database\BaseConnection->query('INSERT INTO `de...', Array, false)
+#4 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Model.php(259): CodeIgniter\Database\BaseBuilder->insert()
+#5 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\BaseModel.php(774): CodeIgniter\Model->doInsert(Array)
+#6 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Model.php(686): CodeIgniter\BaseModel->insert(Array, true)
+#7 G:\Project\website\SIMORLIN\api\app\Controllers\Desa.php(50): CodeIgniter\Model->insert(Array)
+#8 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Desa->create()
+#9 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Desa))
+#10 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 G:\Project\website\SIMORLIN\api\public\index.php(46): CodeIgniter\CodeIgniter->run()
+#12 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\Project\\webs...')
+#13 {main}
+ERROR - 2021-07-10 23:56:36 --> Column 'id_desa' in where clause is ambiguous
+CRITICAL - 2021-07-10 23:56:36 --> Column 'id_desa' in where clause is ambiguous
+#0 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 G:\Project\website\SIMORLIN\api\app\Models\JalanModel.php(27): CodeIgniter\Database\BaseBuilder->get()
+#5 G:\Project\website\SIMORLIN\api\app\Controllers\Jalan.php(42): App\Models\JalanModel->getListJalan(0, 1, Array)
+#6 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Jalan->index()
+#7 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Jalan))
+#8 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 G:\Project\website\SIMORLIN\api\public\index.php(46): CodeIgniter\CodeIgniter->run()
+#10 G:\Project\website\SIMORLIN\api\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('G:\\Project\\webs...')
+#11 {main}

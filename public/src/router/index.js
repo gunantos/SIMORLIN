@@ -5,6 +5,15 @@ import Login from '@/views/Login.vue'
 import store from '@/store/index.js'
 import Map from '@/views/Map.vue'
 import Kecamatan from '@/views/data/Kecamatan.vue'
+import Desa from '@/views/data/Desa.vue'
+import Jalan from '@/views/data/Jalan.vue'
+import Ruas from '@/views/data/Ruas.vue'
+import Arah from '@/views/data/Arah.vue'
+import Perlengkapan from '@/views/data/Perlengkapan.vue'
+import Tersedia from '@/views/input/Tersedia.vue'
+import Kebutuhan from '@/views/input/Kebutuhan.vue'
+import GambarLogin from '@/views/LoginGambar'
+
 
 Vue.use(VueRouter)
 
@@ -38,8 +47,81 @@ const routes = [
     }
   },
   {
+    path: '/input/kebutuhan',
+    name: 'InputKebutuhan',
+    component: Kebutuhan,
+    meta: {
+      requireAuth: true,
+      is_user: true
+    }
+  },
+  {
+    path: '/input/tersedia',
+    name: 'InputTersedia',
+    component: Tersedia,
+    meta: {
+      requireAuth: true,
+      is_user: true
+    }
+  },
+  {
     path: '/data/kecamatan',
+    name: 'DataKecamatan',
     component: Kecamatan,
+    meta: {
+      requireAuth: true,
+      is_user: true
+    }
+  },
+  {
+    path: '/data/desa',
+    component: Desa,
+    name: 'DataDesa',
+    meta: {
+      requireAuth: true,
+      is_user: true
+    }
+  },
+  {
+    path: '/data/jalan',
+    component: Jalan,
+    name: 'DataJalan',
+    meta: {
+      requireAuth: true,
+      is_user: true
+    }
+  },
+  {
+    path: '/data/ruas',
+    component: Ruas,
+    name: 'DataRuas',
+    meta: {
+      requireAuth: true,
+      is_user: true
+    }
+  },
+  {
+    path: '/data/arah',
+    component: Arah,
+    name: 'DataArah',
+    meta: {
+      requireAuth: true,
+      is_user: true
+    }
+  },
+  {
+    path: '/data/perlengkapan',
+    component: Perlengkapan,
+    name: 'DataPerlengkapan',
+    meta: {
+      requireAuth: true,
+      is_user: true
+    }
+  },
+  {
+    path: '/setting/login-gambar',
+    component: GambarLogin,
+    name: 'SettingGambarLogin',
     meta: {
       requireAuth: true,
       is_user: true

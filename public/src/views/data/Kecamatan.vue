@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <Table :headers="headers" :primary-key="primaryKey" :title="title" :path="path" :edit="allowEdit" :new="allowNew" :delete="allowDelete"></Table>
+    <Table :headers="headers" :primary-key="primaryKey" :title="title" :path="path" :edit="allowEdit" :new="allowNew" :deletes="allowDelete"></Table>
   </v-container>
 </template>
 <script>
@@ -17,8 +17,11 @@ export default {
           width: '10%',
           align: 'start',
           sortable: false,
+          hide: true,
           value: 'id_kecamatan',
-          input: 'auto'
+          form: false,
+          input: 'auto',
+          rules: []
         },
         {
           text: 'KODE KECAMATAN',
@@ -26,7 +29,10 @@ export default {
           width: '20%',
           sortable: false,
           value: 'kode_kecamatan',
-          input: 'text'
+          input: 'text',
+          rules: [
+            v => !!v || 'Kode kecamatan is Required'
+          ]
         },
         {
           text: 'NAMA KECAMATAN',
@@ -34,7 +40,10 @@ export default {
           width: '60%',
           sortable: false,
           value: 'nama_kecamatan',
-          input: 'text'
+          input: 'text',
+          rules: [
+            v => !!v || 'Nama kecamatan is Required'
+          ]
         }
       ],
       title: "Daftar Kecamatan",

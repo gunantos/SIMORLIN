@@ -29,8 +29,7 @@ export default new Vuex.Store({
       {
         title: 'Pengaturan', icon: 'mdi-cog', path: '/setting', sub: [
           { title: 'Gambar Login', icon: 'mdi-cookie', path: '/setting/login-gambar' },
-          { title: 'Users', icon: 'mdi-account', path: '/setting/user' },
-          { title: 'Jenis User', icon: 'mdi-account-circle', path: '/setting/user-access' }
+          { title: 'Users', icon: 'mdi-account', path: '/setting/user' }
       ]}
     ]
   },

@@ -17,6 +17,18 @@ class UserModel extends Model
     protected $updatedField  = 'updated';
     protected $deletedField  = 'deleted';
 
+    
+    public function count($where=[]) {
+        $db = $this->db->table($this->table)->select('count('. $this->primaryKey .') as ttl')
+                ->where($where)
+                ->where($this->deletedField .' is NULL')
+                ->get();
+        if ($db) {
+            $gt = $db->getRow();
+            return $gt->ttl;
+        }
+        return 0;
+    }
     protected function beforeInsert(array $data): array
     {
         return $this->getUpdatedDataWithHashedPassword($data);

@@ -24,13 +24,20 @@ class Kecamatan extends RestfullApi
         if ($page < 1) {
             $page = 1;
         }
-        if ($size < 0) {
+        if ($size < 1 && $size >= 0) {
             $size = 10;
-        } else if ($size > 500) {
+        } else if ($size > 10000) {
             $size = 10;
         }
-        
-        return $this->respond(['status'=>true, 'data'=>$this->model->findAll($size, $page)]);
+        if ($size > 0) {
+             $_page = ($page - 1) * $size;
+             $data = $this->model->findAll($size, $_page);
+        } else {
+             $data = $this->model->findAll();
+        }
+        $total = (int) $this->model->count();
+
+        return $this->respond(['status'=>true, 'data'=>$data, 'total'=>$total]);
     }
 
     public function show($id = null) {
@@ -38,13 +45,32 @@ class Kecamatan extends RestfullApi
     }
 
 	public function create() {
-		$PHPAUTH = new Authentication($this->config);
-        $token = $PHPAUTH->token()->encode($this->user_api);
-        return $this->respond(['status'=>true, 'token'=>$token, 'isadmin'=>true]);
+        $kode = $this->request->getPost('kode_kecamatan');
+        $nama = $this->request->getPost('nama_kecamatan');
+        if (empty($kode) || empty($nama)) {
+            return $this->respond(['status'=>false, 'message'=>'Kode dan nama masih kosong']);
+        }
+        if ($this->model->insert(['kode_kecamatan'=>$kode, 'nama_kecamatan'=>$nama])) {
+            return $this->respond(['status'=>true, 'message'=>'Berhasil menambahkan data']);
+        } else {
+            return $this->respond(['status'=>false, 'message'=>'Gagal menambahkan data']);
+        }
 	}
 
     public function update($id = null) {
-
+        $kode = $this->request->getVar('kode_kecamatan');
+        $nama = $this->request->getVar('nama_kecamatan');
+        if (empty($id)) {
+             return $this->respond(['status'=>false, 'message'=>'Tentukan data yang ingin di edit']);
+        }
+        if (empty($kode) || empty($nama)) {
+            return $this->respond(['status'=>false, 'message'=>'Data masih kosong']);
+        }
+        if ($this->model->update($id, ['kode_kecamatan'=>$kode, 'nama_kecamatan'=>$nama])) {
+            return $this->respond(['status'=>true, 'message'=>'Berhasil menyimpan data']);
+        } else {
+            return $this->respond(['status'=>false, 'message'=>'Gagal menyimpan data']);
+        }
     }
 
     public function delete($id = null) {
